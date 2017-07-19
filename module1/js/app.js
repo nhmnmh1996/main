@@ -1,28 +1,41 @@
+//version 1.0.0
 (function(){
   'use strict';
   angular.module('LunchCheck',[])
   .controller('LunchCheckController',LunchCheckController);
 
-  LunchCheckController.$inject=['$scope'];
+  LunchCheckController.$inject=['$scope','$filter'];
   function LunchCheckController($scope) {
     $scope.name="";
     $scope.color="";
+    $scope.message="";
     $scope.Check=function () {
-      var splittr=$scope.name.split(',');
-      var color="";
-      if($scope.name==""){
-        $scope.message="Please enter data first";
+      $scope.message=stringsplit($scope.name);
+    };
+    function stringsplit(str){
+      var splittr=str.split(',');
+      var number=0;
+      var mes="";
+      for(var i=0;i<splittr.length;i++){
+        if(splittr[i].trim()){
+          number++;
+        }
+      }
+      if(number==0){
+        mes="Please enter data first";
         $scope.color="red";
       }
-      else if (splittr.length<=3) {
-        $scope.message="Enjoy!";
+      else if (number<=3) {
+        mes="Enjoy!";
         $scope.color="green";
       }
-      else {
-        $scope.message="Too much!";
+      else if(number>=4){
+        mes="Too much!";
         $scope.color="green";
       }
-    };
+      return mes;
+    }
   }
 
 })();
+
