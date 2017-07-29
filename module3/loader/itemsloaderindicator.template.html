@@ -1,0 +1,10 @@
+
+<div class="loader"></div>
+<table class="table table-group" >
+  <tr><td>Short_name</td><td>Name</td><td>Description</td><td>Button</td></tr>
+  <tr ng-repeat="item in Ctrl.items" >
+    <td>{{item.short_name}}</td> <td>{{item.name}}</td><td>{{item.description}}</td>
+    <td><button ng-click="Ctrl.onRemove({index:$index});">Don't want this one!</button></td>
+  </tr>
+  <tr ng-if="Ctrl.items.length == 0"><td><h2>Nothing Found</h2></td><td></td><td></td><td></td></tr>
+</table>
