@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('public')
+  angular.module('common')
   .controller('SignUpController',SignUpController);
 
   //SignUpController.$inject=[];
