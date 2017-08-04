@@ -6,11 +6,11 @@
 
   SignUpController.$inject=['$rootScope'];
   function SignUpController($rootScope) {
-    var $signupCtrl=this;
-    $signupCtrl.users=[];
-    $signupCtrl.submit=function () {
-      $signupCtrl.completed=true;
-      $signupCtrl.users.push($signupCtrl.user);
+    var $ctrl=this;
+    $ctrl.users=[];
+    $ctrl.submit=function () {
+      $ctrl.completed=true;
+      $ctrl.users.push($ctrl.user);
     }
 
   }
