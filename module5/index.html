@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/restaurant.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/signup.css">
   </head>
   <body ng-app="restaurant" ng-strict-di>
 
@@ -55,7 +56,7 @@
                   <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#myModal">
+                <a ui-sref="public.signup" data-toggle="modal" data-target="#myModal">
                   <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
               </li>
               <li id="phone" class="hidden-xs">
@@ -68,46 +69,7 @@
       </nav><!-- #header-nav -->
     </header>
 
-
-    <!-- Modal -->
-    <form name='regForm' novalidate>
-        <div class="modal fade color-back" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" >Sign Up</h4>
-              </div>
-              <div class="modal-body">
-                <table class="table table-group">
-                  <tbody>
-                    <tr>
-                      <td>Name: </td>
-                      <td><input type="text" name="username" placeholder="UserName"></td>
-                    </tr>
-                    <tr>
-                      <td>Email: </td>
-                      <td><input type="emai" name="emai" placeholder="Email"></td>
-                    </tr>
-                    <tr>
-                      <td>Phone: </td>
-                      <td><input type="text" name="phone" placeholder="Phone ### ### ####"></td>
-                    </tr>
-                    <tr>
-                      <td>Favorite dish: </td>
-                      <td><input type="text" name="shortname" placeholder="Shor_Name"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </form>
+    <sign-up></sign-up>
 
     <div id="call-btn" class="visible-xs">
       <a class="btn" href="tel:410-602-5008">
@@ -169,7 +131,7 @@
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
     <script src="src/public/public.routes.js"></script>
-    <script src="src/public/menu/public.controller.js"></script>
+    <script src="src/public/menu/signup.controller.js"></script>
     <script src="src/public/menu/menu.controller.js"></script>
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
