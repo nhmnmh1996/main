@@ -19,6 +19,23 @@ function routeConfig ($stateProvider) {
       url: '/',
       templateUrl: 'src/public/home/home.html'
     })
+    .state('public.my', {
+      url: '/my',
+      templateUrl: 'src/public/signup/my.html',
+      controller: 'MyController',
+      controllerAs: 'myCtrl'
+    })
+    .state('public.signup', {
+      url: '/signup',
+      templateUrl: 'src/public/signup/signup.html',
+      controller: 'SignUpController',
+      controllerAs: 'signCtrl',
+      resolve: {
+        Items: ['MenuService', function (MenuService) {
+          return MenuService.getMenu();
+        }]
+      }
+    })
     .state('public.menu', {
       url: '/menu',
       templateUrl: 'src/public/menu/menu.html',

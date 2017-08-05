@@ -52,11 +52,13 @@
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
               <li>
-                <a href="#">
+                <a ui-sref="public.my" >
                   <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
+                <!-- <a ui-sref="public.signup" ng-if="$ctrl.users.length===0">
+                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a> -->
               </li>
               <li>
-                <a ui-sref="public.signup" data-toggle="modal" data-target="#myModal">
+                <a ui-sref="public.signup">
                   <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
               </li>
               <li id="phone" class="hidden-xs">
@@ -69,7 +71,6 @@
       </nav><!-- #header-nav -->
     </header>
 
-    <sign-up></sign-up>
 
     <div id="call-btn" class="visible-xs">
       <a class="btn" href="tel:410-602-5008">
@@ -131,6 +132,7 @@
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
     <script src="src/public/public.routes.js"></script>
+    <script src="src/public/signup/my.controller.js"></script>
     <script src="src/public/signup/signup.controller.js"></script>
     <script src="src/public/menu/menu.controller.js"></script>
     <script src="src/public/menu-category/menu-category.component.js"></script>

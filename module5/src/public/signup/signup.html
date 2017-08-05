@@ -1,57 +1,38 @@
-<!-- Modal -->
+<!-- Form -->
+<div class="container color-back">
 <form name='regForm' novalidate>
-    <div class="modal fade color-back" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" >Sign Up</h4>
-          </div>
-          <div class="modal-body">
-            <table class="table table-group">
-              <tbody>
-                <tr>
-                  <td>Name: </td>
-                  <td>
-                      <input type="text" name="username" placeholder="UserName"
-                      ng-model="$ctrl.user.username" required minlength="4" ng-maxlength="10">
-                      <span ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched">
-                        Username must be at least 4 characters long
-                      </span>
-                      <span ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
-                        Username must not be longer than 10 characters
-                      </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Email: </td>
-                  <td>
-                    <input type="emai" name="emai" placeholder="Email" ng-model="$ctrl.user.email" required>
-                    <span ng-if="regForm.email.$invalid && regForm.email.$touched">Must be a valid email address: handle@domain format</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Phone: </td>
-                  <td>
-                    <input type="text" name="phone" placeholder="Phone ### ### ####" ng-model="$ctrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
-                    <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">Phone must be in the format ###-###-####.</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Favorite dish: </td>
-                  <td>
-                    <input type="text" name="shortname" placeholder="Shor_Name" ng-model="$ctrl.user.dish" required>
-                    <span ng-if="regForm.dish.$invalid && regForm.dish.$touched">Please enter data first</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" ng-disabled="regForm.$invalid" ng-click="$ctrl.submit();">Save changes</button>
-          </div>
-        </div>
-      </div>
+    <div>Name:
+      <input type="text" name="username" placeholder="UserName"
+      ng-model="signCtrl.user.username" required minlength="4" ng-maxlength="10">
+      <span ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched">
+        Username must be at least 4 characters long
+      </span>
+      <span ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
+        Username must not be longer than 10 characters
+      </span>
     </div>
+    <br />
+    <div>Email:
+      <input type="email" name="email" placeholder="Email" ng-model="signCtrl.user.email" required>
+      <span ng-if="regForm.email.$invalid && regForm.email.$touched">Must be a valid email address: handle@domain format</span>
+    </div>
+    <br />
+    <div>Phone:
+      <input type="text" name="phone" placeholder="Phone ### ### ####" ng-model="signCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">Phone must be in the format ###-###-####.</span>
+    </div>
+    <br />
+    <div>Favorite dish:
+      <input type="text" name="shortname" placeholder="Short Name Menu Items" ng-model="signCtrl.user.dish" required>
+      <span ng-if="regForm.dish.$invalid && regForm.dish.$touched">Please enter data first</span>
+      <span ng-if="signCtrl.f">No such menu number exists</span>
+
+    </div>
+    <br />
+    <span ng-if="signCtrl.f==false">Your information has been saved</span><span ng-if="signCtrl.f">SignUp Fail</span>
+    <div>
+      <button type="button" class="btn btn-primary" ng-disabled="regForm.$invalid" ng-click="signCtrl.submit()">Save changes</button>
+    </div>
+
 </form>
+</div>

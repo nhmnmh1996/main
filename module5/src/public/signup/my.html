@@ -1,0 +1,11 @@
+<h2 ng-if="myCtrl.users.length===0">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h2>
+<div class="container" ng-if="myCtrl.users.length!==0" ng-repeat="my in myCtrl.users">
+  User Name: {{my.username}}<br />
+  Phone: {{my.phone}}<br />
+  Email: {{my.email}}<br />
+  Favorite dish: {{my.dish}}<br /><br />
+  <img class="img-responsive" width="250" height="150"
+       ng-src="{{myCtrl.basePath}}/images/{{my.dish}}.jpg" alt="{{my.name}}">
+  Name: {{my.name}}<br />
+  Description: {{my.description}}<br /><br />
+</div>
