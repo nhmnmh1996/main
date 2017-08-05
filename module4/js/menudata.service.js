@@ -29,7 +29,7 @@
       });
       $timeout(function () {
         deferred.resolve(service.categories);
-      }, 1000);
+      }, 1500);
       return deferred.promise;
     };
     service.getItemsForCategory=function (search) {
@@ -60,7 +60,7 @@
 
       $timeout(function () {
         deferred.resolve(service.items);
-      }, 1000);
+      }, 1500);
       return deferred.promise;
     };
   }
