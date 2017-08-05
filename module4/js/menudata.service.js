@@ -60,7 +60,7 @@
 
       $timeout(function () {
         deferred.resolve(service.items);
-      }, 1500);
+      }, 1000);
       return deferred.promise;
     };
   }
